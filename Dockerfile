@@ -12,11 +12,11 @@ RUN apk del .tmp-build-deps
 
 RUN mkdir /app
 WORKDIR /app
-COPY ./app /app
+COPY ./app/ /app
 
 RUN mkdir -p /vol/web/media
-RUN mkdir -p /vol/web.static
+RUN mkdir -p /vol/web/static
 RUN adduser -D bufgix
 RUN chown -R bufgix:bufgix /vol/
-RUN chown -R 755 /vol/web
+RUN chmod -R 755 /vol/web
 USER bufgix
